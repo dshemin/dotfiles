@@ -1,0 +1,37 @@
+export GOPATH="$HOME/go"
+export PATH="GOPATH/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
+
+export ZSH="/Users/dshemin/.oh-my-zsh"
+
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="garyblessington"
+
+CASE_SENSITIVE="true"
+
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+HIST_STAMPS="yyyy-mm-dd"
+
+plugins=(fzf git rust)
+
+source $ZSH/oh-my-zsh.sh
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+source "$HOME/.config/rustlang/autocomplete/rustup"
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='nvim'
+fi
+
+alias ls='exa --icons'
+alias ll='ls -laF'
+alias ledger='ledger --strict'
+alias k='kubectl'
+alias cat='bat --paging=never --style=numbers'
+alias dotfile='chezmoi'
+
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
+
