@@ -30,7 +30,6 @@ alias ll='ls -laF'
 alias ledger='ledger --strict'
 alias k='kubectl'
 alias cat='bat --paging=never --style=numbers'
-alias dotfile='chezmoi'
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
