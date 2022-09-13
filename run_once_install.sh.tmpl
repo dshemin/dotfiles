@@ -2,26 +2,10 @@
 
 SH=/bin/sh
 
-# The main function.
-# Runs installation process for supported OS.
-main() {
-    OS=$(uname -s)
+echo "Install on {{ .chezmoi.os }}"
 
-    case "$OS" in
-        "Darwin")
-            install_macos
-        ;;
-        *)
-            echo "Unsupported OS type $OS"
-            exit 1
-        ;;
-    esac
-}
-
-# Installation process for MacOS.
-install_macos() {
-    echo "Install on MacOS"
-
+{{ if eq .chezmoi.os "darwin" -}}
+function install() {
     # Install brew, because we will install everything through that command.
     if ! has_cmd "brew"; then
         echo "Install brew"
@@ -38,6 +22,7 @@ install_macos() {
     CMDS[7]="htop"
     CMDS[8]="fzf"
     CMDS[9]="lua"
+    CMDS[10]="git-delta"
 
     for x in ${CMDS[@]}; do
         brew_install "$x"
@@ -51,11 +36,6 @@ install_macos() {
     fi
 }
 
-has_cmd() {
-    [ -x "$(command -v $1)" ] && return
-    false
-}
-
 brew_install() {
     local CMD="$1"
 
@@ -66,6 +46,12 @@ brew_install() {
         echo "$CMD is already installed"
     fi
 }
+{{ end -}}
 
-main
+has_cmd() {
+    [ -x "$(command -v $1)" ] && return
+    false
+}
+
+install
 

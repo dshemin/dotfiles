@@ -1,0 +1,39 @@
+[alias]
+    ch = checkout
+    br = branch
+    cm = commit
+    st = status
+    fch = fetch --all --prune
+    up = !git fch && git pull 
+
+[user]
+    name = Dmitry Shemin
+    email = shemindmitry@gmail.com
+
+[core]
+    autocrlf = input
+    pager = delta
+
+[pull]
+    ff = only
+
+[interactive]
+    diffFilter = delta --color-only
+
+[add.interactive]
+    useBuiltin = fals
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[pager]
+    stash = false

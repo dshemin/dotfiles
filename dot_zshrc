@@ -27,9 +27,11 @@ fi
 
 alias ls='exa --icons'
 alias ll='ls -laF'
+alias lt='ls -laF --tree'
 alias ledger='ledger --strict'
 alias k='kubectl'
 alias cat='bat --paging=never --style=numbers'
+alias vim="nvim"
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
