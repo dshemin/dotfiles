@@ -1,8 +1,8 @@
 local M = {}
 
 function M.setup()
-    require("nvim-treesitter").setup({
-        ensure_install = {
+    require("nvim-treesitter.configs").setup({
+        ensure_installed = {
             "bash",
             "comment", -- For TODO, FIXME and etc.
             "css",

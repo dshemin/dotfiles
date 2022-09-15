@@ -43,6 +43,7 @@ function M.setup()
     require("lualine").setup({
         options = {
             theme = theme,
+            disabled_filetypes = { "NvimTree" },
         },
         sections = {
             lualine_a = {"mode"},
@@ -53,6 +54,7 @@ function M.setup()
             lualine_z = {"location"}
         },
         extensions = {"nvim-tree"},
+
     })
 end
 

@@ -2,8 +2,17 @@ local M = {}
 
 function M.setup()
     local map = vim.keymap.set
+    local telescope = require("telescope")
 
-    require("telescope").setup()
+    telescope.setup({
+        defaults = {
+            prompt_prefix = " ",
+            selection_caret = " ",
+            file_ignore_patterns = { ".git/", "node_modules" },
+        },
+    })
+
+    telescope.load_extension("projects")
 
     map("n", "<LEADER>ff", "<CMD>lua require('telescope.builtin').find_files()<CR>")
     map("n", "<LEADER>fg", "<CMD>lua require('telescope.builtin').live_grep()<CR>")

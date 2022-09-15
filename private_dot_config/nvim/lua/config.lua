@@ -49,6 +49,7 @@ local function setup_ui()
        trail = "･",
     }
     o.list = true
+    o.ruler = false
 
     -- Setup color schema.
     o.termguicolors = true
@@ -81,6 +82,10 @@ function M.setup()
 
     -- Disable backup files.
     o.backup = false
+    o.writebackup = false
+
+    -- Disable swap files.
+    o.swapfile = false
 
     -- Use GUI color in terminal.
     o.termguicolors = true
@@ -90,6 +95,30 @@ function M.setup()
 
     -- Hide mode.
     o.showmode = false
+
+    -- Hide command.
+    o.showcmd = false
+
+    -- Hide tabline.
+    o.showtabline = 0
+
+    -- Persist undo.
+    o.undofile = true
+
+    o.clipboard = "unnamedplus"
+    o.completeopt = { "menuone", "noselect" }
+    o.fileencoding = "utf-8"
+    o.hlsearch = true
+    o.ignorecase = true
+    o.smartcase = true
+    o.smartindent = true
+    o.mouse = "a"
+    o.pumheight = 10
+    o.updatetime = 300
+
+    o.shortmess:append("c")
+    o.whichwrap:append("<,>,[,],h,l")
+    o.iskeyword:append("-")
 
     bind_keys()
     setup_ui()

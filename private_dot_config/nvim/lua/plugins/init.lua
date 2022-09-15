@@ -66,6 +66,7 @@ local function packer_startup(bootstraped)
         use {
             "ahmedkhalf/project.nvim",
             commit = "090bb11ee7eb76ebb9d0be1c6060eac4f69a240f",
+            config = function() config("project") end,
         }
 
         -- Code completition.
@@ -89,10 +90,15 @@ local function packer_startup(bootstraped)
         use {
             "hrsh7th/cmp-nvim-lsp",
             commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8",
+            config = function() config("cmp-nvim-lsp") end,
         }
         use {
             "hrsh7th/cmp-nvim-lua",
             commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21",
+        }
+        use {
+            "simrat39/rust-tools.nvim",
+            commit = "86a2b4e31f504c00715d0dd082a6b8b5d4afbf03",
         }
 
         -- Code snippets.
@@ -109,16 +115,22 @@ local function packer_startup(bootstraped)
         use {
             "williamboman/mason.nvim",
             commit = "beeb70f2ebaab18e7e031264c5a0f90bd8054628",
-            config = function() require("mason").setup() end,
+            config = function() config("mason") end,
+        }
+        use {
+            "williamboman/mason-lspconfig.nvim",
+            commit = "b70dedab5ceb5f3f84c6bc9ceea013292a14f8dc",
+            config = function() config("mason-lspconfig") end,
         }
         use {
             "jose-elias-alvarez/null-ls.nvim",
             commit = "43cf6d732b4e7e550ce8f9f46570e5eb25a19025",
-            config = function() require("null-ls").setup() end,
+            config = function() config("null-ls") end,
         }
         use {
             "RRethy/vim-illuminate",
             commit = "1c8132dc81078fc1ec7a4a1492352b8f541ee84b",
+            config = function() config("vim-illuminate") end,
         }
 
         -- Treesiter.
