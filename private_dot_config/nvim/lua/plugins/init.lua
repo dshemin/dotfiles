@@ -100,6 +100,12 @@ local function packer_startup(bootstraped)
             "simrat39/rust-tools.nvim",
             commit = "86a2b4e31f504c00715d0dd082a6b8b5d4afbf03",
         }
+        use {
+            'saecki/crates.nvim',
+            event = { "BufRead Cargo.toml" },
+            requires = { "nvim-lua/plenary.nvim" },
+            config = function() config("crates") end,
+        }
 
         -- Code snippets.
         use {
