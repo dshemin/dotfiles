@@ -4,7 +4,7 @@ function M.setup()
     local lsps = {
         "ansiblels",
         "bashls",
-        "csslsp",
+        "cssls",
         "dockerls",
         "golangci_lint_ls",
         "gopls",

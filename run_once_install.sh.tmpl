@@ -13,11 +13,11 @@ function install() {
     fi
 
     CMDS[0]="tmux"
-    CMDS[1]="nvim"
+    CMDS[1]="neovim"
     CMDS[2]="chezmoi"
     CMDS[3]="exa"
     CMDS[4]="bat"
-    CMDS[5]="kubectl"
+    CMDS[5]="kubernetes-cli"
     CMDS[6]="go"
     CMDS[7]="htop"
     CMDS[8]="fzf"
@@ -35,23 +35,22 @@ function install() {
     else
         echo "alacritty is already installed"
     fi
+
+    brew_install "font-fira-code-nerd-font"
 }
 
 brew_install() {
-    local CMD="$1"
+    local PKG="$1"
 
-    if ! has_cmd $CMD; then
-        echo "Install $CMD with brew"
-        brew install $CMD
-    else
-        echo "$CMD is already installed"
-    fi
+    brew list | grep $PKG > /dev/null && echo "$PKG already installed" && return
+
+    echo "Install $PKG"
+    brew install $PKG
 }
 {{ end -}}
 
 has_cmd() {
-    [ -x "$(command -v $1)" ] && return
-    false
+    [ -x "$(command -v $1)" ] || false
 }
 
 install
