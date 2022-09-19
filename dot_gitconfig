@@ -5,6 +5,7 @@
     st = status
     fch = fetch --all --prune
     up = !git fch && git pull 
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [user]
     name = Dmitry Shemin

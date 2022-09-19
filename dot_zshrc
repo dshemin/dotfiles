@@ -20,17 +20,17 @@ source "$HOME/.config/rustlang/autocomplete/rustup"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
+    export EDITOR="vim"
 else
-   export EDITOR='nvim'
+    export EDITOR="nvim"
 fi
 
-alias ls='exa --icons'
-alias ll='ls -laF'
-alias lt='ls -laF --tree'
-alias ledger='ledger --strict'
-alias k='kubectl'
-alias cat='bat --paging=never --style=numbers'
+alias ls="exa --icons"
+alias ll="ls -laF"
+alias lt="ls -laF --tree"
+alias ledger="ledger --strict"
+alias k="kubectl"
+alias cat="bat"
 alias vim="nvim"
 
 export GOPATH="$HOME/go"
