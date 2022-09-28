@@ -12,7 +12,7 @@ function M.setup()
 
     for i = 1,9 do
         local cmd = string.format("<ESC><CMD>lua require('bufferline').go_to_buffer(%d)<CR>", i)
-        map({"n", "i", "v"}, string.format("<LEADER>%d", i), cmd)
+        map({"n", "v"}, string.format("<LEADER>%d", i), cmd)
     end
 end
 
