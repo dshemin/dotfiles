@@ -38,3 +38,6 @@
 
 [pager]
     stash = false
+
+[init]
+    defaultBranch = master
