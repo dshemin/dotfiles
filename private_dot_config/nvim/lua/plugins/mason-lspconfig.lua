@@ -33,6 +33,16 @@ function M.setup()
     }
 
     for _, s in pairs(lsps) do
+        local o = opts
+        if s == "sumneko_lua" then
+            o.settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { 'vim' }
+                    }
+                }
+            }
+        end
         lspconfig[s].setup(opts)
     end
 end

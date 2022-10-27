@@ -1,4 +1,6 @@
 -- NeoVim customization.
+--
+-- global vim
 
 local M = {}
 
@@ -6,7 +8,7 @@ local function bind_keys()
     local map = vim.keymap.set
 
     --Remap space as leader key
-    map("", "<Space>", "<Nop>", opts)
+    map("", "<Space>", "<Nop>")
     vim.g.mapleader = " "
 
     -- Move to the end of the line.
@@ -25,6 +27,12 @@ local function bind_keys()
     map("i", "<S-Tab>", "<C-D>")
     map("v", "<Tab>", ">gv")
     map("v", "<S-Tab>", "<gv")
+
+    -- Switch to VISUAL mode from INSERT mode on SHIFT + Arrow Key.
+    map("i", "<S-Left>", "<ESC>v")
+    map("i", "<S-Up>", "<ESC>v")
+    map("i", "<S-Right>", "<ESC>v")
+    map("i", "<S-Down>", "<ESC>v")
 
     -- Close current buffer.
     map({"n", "i", "v"}, "<C-Q>", "<ESC><CMD>bdelete<CR>")
