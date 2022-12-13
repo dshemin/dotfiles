@@ -5,7 +5,7 @@ SH=/bin/sh
 echo "Install on {{ .chezmoi.os }}"
 
 {{ if eq .chezmoi.os "darwin" -}}
-function install() {
+function install_os_specific() {
     # Install brew, because we will install everything through that command.
     if ! has_cmd "brew"; then
         echo "Install brew"
@@ -51,6 +51,16 @@ brew_install() {
 
 has_cmd() {
     [ -x "$(command -v $1)" ] || false
+}
+
+install() {
+    install_os_specific
+
+    # Clone AstroVim
+    mkdir -p ~/.config
+    if [[ ! -d ~/.config/nvim/ ]]; then
+        git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+    fi
 }
 
 install
