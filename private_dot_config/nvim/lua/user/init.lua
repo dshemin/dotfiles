@@ -75,7 +75,10 @@ local config = {
     -- Configure plugins
     plugins = {
         init = {
-            ["doums/darcula"] = { commit = "faf8dbab27bee0f27e4f1c3ca7e9695af9b1242b" }
+            ["doums/darcula"] = { commit = "faf8dbab27bee0f27e4f1c3ca7e9695af9b1242b" },
+            ["aklt/plantuml-syntax"] = { commit = "845abb56dcd3f12afa6eb47684ef5ba3055802b8" },
+            ["weirongxu/plantuml-previewer.vim"] = { commit = "74483d5d01042db5de6f89aaba64376d87effaff" },
+            ["tyru/open-browser.vim"] = { commit = "7d4c1d8198e889d513a030b5a83faa07606bac27" },
         },
         ["cmp"] = function(config)
             local cmp = require("cmp")
