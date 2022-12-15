@@ -75,10 +75,28 @@ local config = {
     -- Configure plugins
     plugins = {
         init = {
+            -- Disable different colors for parenthesis.
+            ["p00f/nvim-ts-rainbow"] = { disable = true },
+
+            -- Add prefered color schema.
             ["doums/darcula"] = { commit = "faf8dbab27bee0f27e4f1c3ca7e9695af9b1242b" },
+
+            -- PlantUML syntax highlight and snippets.
             ["aklt/plantuml-syntax"] = { commit = "845abb56dcd3f12afa6eb47684ef5ba3055802b8" },
+
+            -- PlantUML previewer.
             ["weirongxu/plantuml-previewer.vim"] = { commit = "74483d5d01042db5de6f89aaba64376d87effaff" },
+
+            -- Plugin which allows to open URLs from NeoVim in the browser.
             ["tyru/open-browser.vim"] = { commit = "7d4c1d8198e889d513a030b5a83faa07606bac27" },
+
+            -- Enable auto Save.
+            ["Pocco81/auto-save.nvim"] = {
+                commit = "979b6c82f60cfa80f4cf437d77446d0ded0addf0",
+                config = function()
+                    require("auto-save").setup()
+                end,
+            }
         },
         ["cmp"] = function(config)
             local cmp = require("cmp")
