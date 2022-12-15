@@ -36,3 +36,5 @@ alias vim="nvim"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
 
+export BARTIB_FILE="$HOME/.config/bartib.file"
+
