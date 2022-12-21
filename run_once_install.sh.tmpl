@@ -24,7 +24,10 @@ function install_os_specific() {
     CMDS[9]="lua"
     CMDS[10]="git-delta"
     CMDS[11]="ripgrep"
+    # Time tracking manager.
     CMDS[11]="bartib"
+    # Cheatsheet for oneliners.
+    CMDS[12]="navi"
 
     for x in ${CMDS[@]}; do
         brew_install "$x"
