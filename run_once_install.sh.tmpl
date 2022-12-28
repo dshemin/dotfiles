@@ -28,6 +28,7 @@ function install_os_specific() {
     CMDS[11]="bartib"
     # Cheatsheet for oneliners.
     CMDS[12]="navi"
+    CMDS[13]="rustup"
 
     for x in ${CMDS[@]}; do
         brew_install "$x"
@@ -57,14 +58,28 @@ has_cmd() {
     [ -x "$(command -v $1)" ] || false
 }
 
-install() {
-    install_os_specific
+setup_rust() {
+    rustup update
+    cargo install --locked clippy
+    cargo install --locked rustfmt
+    cargo install --locked cargo-deny
+    cargo install --locked cargo-udeps
+}
 
+setup_nvim() {
     # Clone AstroVim
     mkdir -p ~/.config
     if [[ ! -d ~/.config/nvim/ ]]; then
         git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
     fi
+}
+
+
+install() {
+    install_os_specific
+
+    setup_rust
+    setup_nvim
 }
 
 install
