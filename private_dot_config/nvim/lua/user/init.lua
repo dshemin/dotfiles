@@ -103,6 +103,22 @@ local config = {
             config.mapping["<CR>"] = cmp.mapping.confirm({ select = true })
             return config
         end,
+        ["mason-lspconfig"] = {
+            ensure_installed = {
+                "sqls",
+                "sumneko_lua",
+                "yamlls",
+                "taplo",
+                "rust_analyzer",
+                "gopls",
+            },
+        },
+        ["mason-nvim-dap"] = {
+            ensure_installed = {
+                "codelldb",
+                "delve",
+            },
+        },
     },
 
     -- LuaSnip Options
@@ -147,6 +163,15 @@ local config = {
                 },
             },
         },
+    },
+
+    -- Configure LSP.
+    lsp = {
+        formatting = {
+            disabled = {
+                "sqls",
+            }
+        }
     },
 }
 
