@@ -187,6 +187,40 @@ local config = {
             }
         }
     },
+
+    treesitter = {
+        ensure_installed = {
+            "bash",
+            "c",
+            "comment",
+            "css",
+            "gitignore",
+            "go",
+            "gomod",
+            "gowork",
+            "help",
+            "html",
+            "javascript",
+            "json",
+            "ledger",
+            "lua",
+            "make",
+            "markdown",
+            "markdown_inline",
+            "php",
+            "phpdoc",
+            "proto",
+            "regex",
+            "rust",
+            "sql",
+            "toml",
+            "tsx",
+            "typescript",
+            "vim",
+            "vue",
+            "yaml",
+        },
+    },
 }
 
 return config
