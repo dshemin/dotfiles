@@ -133,6 +133,14 @@ local config = {
                 "delve",
             },
         },
+        ["neo-tree"] = function(config)
+            config.filesystem = {
+                filtered_items = {
+                    hide_dotfiles = false
+                }
+            }
+            return config
+        end
     },
 
     -- LuaSnip Options
