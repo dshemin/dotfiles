@@ -1,3 +1,15 @@
+local cmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+
+cmd("BufEnter", {
+    desc = "All files matched patter .env.* should be interpret as an dotenv files",
+    group = augroup("dotenv", { clear = true }),
+    pattern = "*.env.*",
+    callback = function()
+        vim.bo.filetype = "sh"
+    end
+})
+
 local config = {
 
     -- Configure AstroNvim updates
