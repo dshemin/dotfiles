@@ -26,6 +26,8 @@ local config = {
     highlights = {
         darcula = {
             Normal = { bg = "#222222" },
+            DiagnosticVirtualTextError = { fg = "#750800" },
+            DiagnosticVirtualTextWarn = { fg = "#754600" },
         },
     },
 
@@ -57,8 +59,11 @@ local config = {
     },
 
     diagnostics = {
-        virtual_text = true,
+        virtual_text = {
+            prefix = "",
+        },
         underline = true,
+        severity_sort = true,
     },
 
     mappings = {
