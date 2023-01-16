@@ -11,7 +11,6 @@ cmd("BufEnter", {
 })
 
 local config = {
-
     -- Configure AstroNvim updates
     updater = {
         remote = "origin",

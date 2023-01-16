@@ -71,6 +71,7 @@ setup_nvim() {
     mkdir -p ~/.config
     if [[ ! -d ~/.config/nvim/ ]]; then
         git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+        nvim  --headless -c 'autocmd User PackerComplete quitall'
     fi
 }
 
