@@ -60,7 +60,7 @@ has_cmd() {
 
 setup_rust() {
     rustup update
-    cargo install --locked clippy
+    rustup component add clippy-preview
     cargo install --locked rustfmt
     cargo install --locked cargo-deny
     cargo install --locked cargo-udeps
