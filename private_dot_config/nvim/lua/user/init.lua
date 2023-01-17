@@ -35,7 +35,10 @@ local config = {
         opt = {
             relativenumber = true,
             number = true,
-            spell = false,
+            spell = true,
+            spelllang = {
+                "en",
+            },
             signcolumn = "auto",
             wrap = false,
             listchars = {
