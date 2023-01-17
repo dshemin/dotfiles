@@ -48,6 +48,9 @@ local config = {
             },
             list = true,
             cursorline = true,
+            colorcolumn = {
+                100,
+            },
         },
         g = {
             mapleader = " ",
