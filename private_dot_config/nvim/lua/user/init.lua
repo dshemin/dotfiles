@@ -123,6 +123,7 @@ local config = {
         ["cmp"] = function(config)
             local cmp = require("cmp")
             config.mapping["<CR>"] = cmp.mapping.confirm({ select = true })
+            config.mapping["<Tab>"] = cmp.config.disable
             return config
         end,
         ["mason-lspconfig"] = {
