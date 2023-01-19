@@ -9,6 +9,7 @@ return {
         functionTypeParameters = true,
         parameterNames = true,
         rangeVariableTypes = true,
+        gofumpt = true,
       },
     },
   },
