@@ -178,7 +178,7 @@ local config = {
         ["telescope"] = function(config)
             print(vim.inspect(config))
             config.defaults.file_ignore_patterns = {
-                ".git",
+                ".git/",
                 "node_modules",
                 "vendor",
             }
