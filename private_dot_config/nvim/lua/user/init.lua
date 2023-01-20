@@ -146,6 +146,7 @@ local config = {
                 "dotls",
                 "eslint",
                 "gopls",
+                "graphql",
                 "html",
                 "jsonls",
                 "marksman",
