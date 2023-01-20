@@ -86,7 +86,11 @@ local config = {
 
             -- Remap telescope, ff should search hidden and ignored files.
             ["<leader>ff"] = {
-                function() require("telescope.builtin").find_files { hidden = true, no_ignore = true } end,
+                function() require("telescope.builtin").find_files({
+                        hidden = true,
+                        no_ignore = true,
+                    })
+                end,
                 desc = "Search all files",
             },
             ["<leader>fF"] = false,
@@ -172,19 +176,12 @@ local config = {
             return config
         end,
         ["telescope"] = function(config)
-            local telescopeConfig = require("telescope.config")
-
-            -- Clone the default Telescope configuration
-            local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
-
-            -- I want to search in hidden/dot files.
-            table.insert(vimgrep_arguments, "--hidden")
-            -- I don't want to search in the `.git` directory.
-            table.insert(vimgrep_arguments, "--glob")
-            table.insert(vimgrep_arguments, "!**/.git/*")
-
-            config.defaults.vimgrep_arguments = vimgrep_arguments
-
+            print(vim.inspect(config))
+            config.defaults.file_ignore_patterns = {
+                ".git",
+                "node_modules",
+                "vendor",
+            }
             return config
         end,
     },
