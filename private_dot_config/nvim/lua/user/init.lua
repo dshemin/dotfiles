@@ -250,6 +250,7 @@ local config = {
             "go",
             "gomod",
             "gowork",
+            "graphql",
             "help",
             "html",
             "javascript",
