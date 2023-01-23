@@ -51,6 +51,8 @@ local config = {
             colorcolumn = {
                 100,
             },
+            endofline = true,
+            fixendofline = true,
         },
         g = {
             mapleader = " ",
