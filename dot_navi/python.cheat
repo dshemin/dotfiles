@@ -2,3 +2,8 @@
 
 # Setup python virtual environment.
 python3 -m venv ./venv
+
+% python
+
+# Update requirements.
+pip3 freeze > requirements.txt
