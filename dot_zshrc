@@ -18,6 +18,9 @@ source $ZSH/oh-my-zsh.sh
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 source "$HOME/.config/rustlang/autocomplete/rustup"
 
+# Setup navi.
+eval "$(navi widget zsh)"
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR="vim"
