@@ -35,6 +35,7 @@ alias ledger="ledger --strict"
 alias k="kubectl"
 alias cat="bat"
 alias vim="nvim"
+alias edit="/Applications/Neovide.app/Contents/MacOS/neovide"
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
