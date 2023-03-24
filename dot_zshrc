@@ -17,6 +17,7 @@ plugins=(fzf git rust)
 source $ZSH/oh-my-zsh.sh
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 source "$HOME/.config/rustlang/autocomplete/rustup"
+source <(helm completion zsh)
 
 # Setup navi.
 eval "$(navi widget zsh)"
