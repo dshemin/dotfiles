@@ -131,7 +131,10 @@ local config = {
                 config = function()
                     require("auto-save").setup()
                 end,
-            }
+            },
+
+            -- Add Ansible syntax highlight support.
+            ["pearofducks/ansible-vim"] = { commit = "93798e8c89c441d29d4678da0c0d5e1429eb43b0" },
         },
         ["cmp"] = function(config)
             local cmp = require("cmp")
