@@ -30,6 +30,8 @@ function install_os_specific() {
     CMDS[12]="navi"
     CMDS[13]="rustup"
     CMDS[14]="helm"
+    # Task runner https://taskfile.dev/
+    CMDS[16]="go-task"
 
     for x in ${CMDS[@]}; do
         brew_install "$x"
