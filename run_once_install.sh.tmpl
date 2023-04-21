@@ -32,6 +32,8 @@ function install_os_specific() {
     CMDS[14]="helm"
     # Task runner https://taskfile.dev/
     CMDS[16]="go-task"
+    # For managing kubernetes
+    CMDS[17]="derailed/k9s/k9s"
 
     for x in ${CMDS[@]}; do
         brew_install "$x"
