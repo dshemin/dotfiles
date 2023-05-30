@@ -100,6 +100,7 @@ local config = {
         i = {
             ["<C-e>"] = { "<ESC>A", desc = "Move to the end of the line" },
             ["<C-a>"] = { "<ESC>I", desc = "Move to the beginning of the line" },
+            ["<D-v>"] = { '<ESC>"+pi' },
         },
         v = {
             ["<Tab>"] = { ">gv", desc = "Indent line to the right" },

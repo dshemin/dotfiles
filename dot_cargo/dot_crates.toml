@@ -1,7 +1,7 @@
 [v1]
 "api 0.1.0 (path+file:///Users/dmitriysemin/Workspace/modeller/api)" = ["api"]
 "cargo-audit 0.17.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-audit"]
-"cargo-deny 0.13.7 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-deny"]
+"cargo-deny 0.13.9 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-deny"]
 "cargo-edit 0.10.4 (registry+https://github.com/rust-lang/crates.io-index)" = [
     "cargo-add",
     "cargo-rm",
@@ -17,7 +17,7 @@
 "cargo-modules 0.5.7 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-modules"]
 "cargo-nextest 0.9.47 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-nextest"]
 "cargo-tarpaulin 0.20.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-tarpaulin"]
-"cargo-udeps 0.1.35 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-udeps"]
+"cargo-udeps 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-udeps"]
 "cargo-watch 7.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-watch"]
 "diesel_cli 1.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["diesel"]
 "fyrox-template 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["fyrox-template"]
