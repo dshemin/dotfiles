@@ -1,4 +1,15 @@
 % k8s
 
 # Get list of resource in specified namespace
-kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n 
+kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n <namespace>
+
+$ namespace : kubectl get namespaces | tail -n +2 | cut -d' ' -f1
+
+% k8s
+
+# Get decrypted secret
+kubectl get secrets --namespace <namespace> <secret_name> -o jsonpath="{.data.<name>}" | base64 -d
+
+$ namespace : kubectl get namespaces | tail -n +2 | cut -d' ' -f1
+$ secret_name : kubectl get secrets --namespace <namespace> | tail -n +2 | cut -d' ' -f1
+$ name : kubectl get secrets --namespace prod keycloak-database -o jsonpath="{.data}" | jq -r 'keys | join("\n")'
