@@ -237,6 +237,7 @@
         "String",
         "style",
         "succeeded",
+        "successfully",
         "such",
         "telling",
         "temp",
@@ -264,6 +265,7 @@
         "Validates",
         "Wait",
         "want",
+        "went",
         "what",
         "whether",
         "which",
@@ -271,7 +273,8 @@
         "will",
         "wrap",
         "writing",
-        "written"
+        "written",
+        "wrong"
     ],
     "redhat.telemetry.enabled": false,
     "trailing-spaces.trimOnSave": true,
