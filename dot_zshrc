@@ -44,3 +44,5 @@ export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
 
 export BARTIB_FILE="$HOME/.config/bartib.file"
 
+# For pinentry, use cli instead of ui.
+export GPG_TTY=$(tty)
