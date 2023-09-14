@@ -19,6 +19,7 @@
         "already",
         "also",
         "alter",
+        "Always",
         "amount",
         "around",
         "authentication",
@@ -122,6 +123,7 @@
         "hint",
         "holds",
         "Horizontal",
+        "hydrate",
         "icon",
         "identificator",
         "immediately",
@@ -316,4 +318,6 @@
         }
     ],
     "pulumi-lsp.detectExtensionConflicts": false,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'FiraCode Nerd Font',Menlo, Monaco, 'Courier New', monospace",
 }
