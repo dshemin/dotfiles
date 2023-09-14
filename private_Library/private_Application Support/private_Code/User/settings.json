@@ -309,8 +309,8 @@
     "debug.allowBreakpointsEverywhere": true,
     "editor.rulers": [
         {
-          "column": 80,
-          "color": "#ff9900"
+            "column": 80,
+            "color": "#ff9900"
         },
         {
             "column": 100,
@@ -320,4 +320,7 @@
     "pulumi-lsp.detectExtensionConflicts": false,
     "editor.fontLigatures": true,
     "editor.fontFamily": "'FiraCode Nerd Font',Menlo, Monaco, 'Courier New', monospace",
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "editor.minimap.showSlider": "always",
 }
