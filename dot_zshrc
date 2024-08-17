@@ -38,9 +38,11 @@ alias k="kubectl"
 alias cat="bat"
 alias vim="nvim"
 alias edit="/Applications/Neovide.app/Contents/MacOS/neovide"
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin"
 
 export BARTIB_FILE="$HOME/.config/bartib.file"
 
