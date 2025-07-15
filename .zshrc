@@ -1,6 +1,3 @@
-export GOPATH="$HOME/go"
-export PATH="GOPATH/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
-
 export ZSH="/Users/dshemin/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -16,9 +13,7 @@ plugins=(fzf git rust)
 
 source $ZSH/oh-my-zsh.sh
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-source "$HOME/.config/rustlang/autocomplete/rustup"
 source <(kubectl completion zsh)
-source <(helm completion zsh)
 
 # Setup navi.
 eval "$(navi widget zsh)"
@@ -33,18 +28,15 @@ fi
 alias ls="exa --icons"
 alias ll="ls -laF"
 alias lt="ls -laF --tree"
-alias ledger="ledger --strict"
 alias k="kubectl"
 alias cat="bat"
 alias vim="nvim"
-alias edit="/Applications/Neovide.app/Contents/MacOS/neovide"
-alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin"
-
-export BARTIB_FILE="$HOME/.config/bartib.file"
+export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 
 # For pinentry, use cli instead of ui.
 export GPG_TTY=$(tty)
+autoload -U compinit; compinit
