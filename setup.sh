@@ -31,24 +31,27 @@ install_darwin() {
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	fi
 
-	CMDS[0]="tmux"
-	CMDS[1]="neovim"
-	CMDS[2]="exa"
-	CMDS[3]="bat"
-	CMDS[4]="kubernetes-cli"
-	CMDS[5]="go"
-	CMDS[6]="htop"
-	CMDS[7]="fzf"
-	CMDS[8]="lua"
-	CMDS[9]="git-delta"
-	CMDS[10]="ripgrep"
-	CMDS[11]="navi"
-	CMDS[12]="rustup"
-	CMDS[13]="derailed/k9s/k9s"
-	CMDS[14]="jq"
-	CMDS[15]="font-fira-code-nerd-font"
+	local apps=(
+		"kitty"
+		"tmux"
+		"neovim"
+		"exa"
+		"bat"
+		"kubernetes-cli"
+		"go"
+		"htop"
+		"fzf"
+		"lua"
+		"git-delta"
+		"ripgrep"
+		"navi"
+		"rustup"
+		"k9s"
+		"jq"
+		"font-fira-code-nerd-font"
+	)
 
-	for x in ${CMDS[@]}; do
+	for x in ${apps[@]}; do
 		brew_install "$x"
 	done
 }
