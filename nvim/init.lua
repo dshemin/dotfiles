@@ -129,6 +129,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "go",
+	callback = function()
+		vim.opt_local.tabstop = 4 -- Display tabs as 4 spaces wide
+		vim.opt_local.shiftwidth = 4 -- Indent/outdent by 4 spaces
+		vim.opt_local.expandtab = true -- Use spaces instead of tabs
+	end,
+})
+
 -- }}}
 
 -- [[ Install `lazy.nvim` plugin manager ]] {{{
@@ -343,6 +352,7 @@ require("lazy").setup({
 
 					-- Find references for the word under your cursor.
 					map("grr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+					map("<C-b>", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 
 					-- Jump to the implementation of the word under your cursor.
 					--  Useful when your language has ways of declaring types without an actual implementation.
