@@ -32,6 +32,15 @@ alias k="kubectl"
 alias cat="bat"
 alias vim="nvim"
 
+# Git shortcuts.
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gcm="git commit --amend"
+alias gp="git push"
+alias gpf="git push --force"
+alias gd="git diff"
+
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin"
