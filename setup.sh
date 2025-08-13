@@ -9,6 +9,8 @@ main() {
 	install
 	log "Setup rust"
 	setup_rust
+	log "Install apps by cargo"
+	install_cargo
 	log "Setup links"
 	links
 }
@@ -67,6 +69,12 @@ brew_install() {
 
 has_cmd() {
 	[ -x "$(command -v $1)" ] || false
+}
+
+install_cago() {
+	# TUI for database.
+	# Homepage: https://github.com/achristmascarl/rainfrog
+	cargo install rainfrog
 }
 
 links() {
