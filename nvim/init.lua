@@ -72,6 +72,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+vim.opt_local.tabstop = 4 -- Display tabs as 4 spaces wide
+vim.opt_local.shiftwidth = 4 -- Indent/outdent by 4 spaces
+
 -- }}}
 
 -- [[ Basic Keymaps ]] {{{
@@ -131,11 +134,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "go",
-	callback = function()
-		vim.opt_local.tabstop = 4 -- Display tabs as 4 spaces wide
-		vim.opt_local.shiftwidth = 4 -- Indent/outdent by 4 spaces
-		vim.opt_local.expandtab = true -- Use spaces instead of tabs
-	end,
+	callback = function() end,
 })
 
 -- }}}
