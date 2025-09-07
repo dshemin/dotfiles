@@ -41,6 +41,18 @@ alias gp="git push"
 alias gpf="git push --force"
 alias gd="git diff"
 
+# Shortcut for openning a TUI for chousing git branches
+function gch() {
+    git branch --all --color \
+        --format='%(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative))' | \
+        fzf --header "Checkout Recent Branch" \
+            --ansi \
+            --preview 'git log --graph --oneline --decorate --color=always {1}' \
+            --preview-window=top:35% \
+            --pointer="  " \
+            --bind "enter:execute(git checkout {1})+abort"
+}
+
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:$HOME/.cargo/bin:/Users/dshemin/bin:$PATH"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin"
