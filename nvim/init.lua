@@ -472,6 +472,8 @@ require("lazy").setup({
 
 			local servers = {
 				gopls = {},
+				clangd = {},
+				cpplint = {},
 				rust_analyzer = {},
 				-- See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
