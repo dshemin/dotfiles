@@ -40,6 +40,7 @@ alias gcm="git commit --amend"
 alias gp="git push"
 alias gpf="git push --force"
 alias gd="git diff"
+alias gl="git l"
 
 # Shortcut for openning a TUI for chousing git branches
 function gch() {
