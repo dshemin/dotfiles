@@ -44,14 +44,19 @@ alias gl="git l"
 
 # Shortcut for openning a TUI for chousing git branches
 function gch() {
-    git branch --all --color \
-        --format='%(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative))' | \
-        fzf --header "Checkout Recent Branch" \
-            --ansi \
-            --preview 'git log --graph --oneline --decorate --color=always {1}' \
-            --preview-window=top:35% \
-            --pointer="  " \
-            --bind "enter:execute(git checkout {1})+abort"
+    local target="$1"
+    if [[ "$target" != "" ]]; then
+        git checkout $target
+    else
+        git branch --all --color \
+            --format='%(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative))' | \
+            fzf --header "Checkout Recent Branch" \
+                --ansi \
+                --preview 'git log --graph --oneline --decorate --color=always {1}' \
+                --preview-window=top:35% \
+                --pointer="  " \
+                --bind "enter:execute(git checkout {1})+abort"
+    fi
 }
 
 export GOPATH="$HOME/go"
