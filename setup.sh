@@ -75,6 +75,9 @@ install_cago() {
 	# TUI for database.
 	# Homepage: https://github.com/achristmascarl/rainfrog
 	cargo install rainfrog
+	# Remove unused Rust dependencies.
+	# Homepage: https://crates.io/crates/cargo-machete
+	cargo install cargo-machete
 }
 
 links() {
