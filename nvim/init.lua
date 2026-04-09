@@ -153,6 +153,15 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "go",
+	callback = function()
+		vim.opt.expandtab = false
+		vim.opt.tabstop = 4
+		vim.opt.shiftwidth = 4
+	end,
+})
+
 -- }}}
 
 -- [[ Install `lazy.nvim` plugin manager ]] {{{
