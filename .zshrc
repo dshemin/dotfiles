@@ -67,3 +67,6 @@ export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 # For pinentry, use cli instead of ui.
 export GPG_TTY=$(tty)
 autoload -U compinit; compinit
+
+# opencode
+export PATH=/Users/dshemin/.opencode/bin:$PATH

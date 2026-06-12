@@ -11,6 +11,8 @@ main() {
 	setup_rust
 	log "Install apps by cargo"
 	install_cargo
+	log "Install opencoder"
+	install_opencoder
 	log "Setup links"
 	links
 }
@@ -78,6 +80,15 @@ install_cago() {
 	# Remove unused Rust dependencies.
 	# Homepage: https://crates.io/crates/cargo-machete
 	cargo install cargo-machete
+}
+
+install_opencoder() {
+	# https://opencode.ai/docs/ru
+	# https://opencode.ai/docs/providers#directory
+	# List of available models: https://models.dev/
+	curl -fsSL https://opencode.ai/install | bash -s -- --version 1.17.2
+
+	# https://models.dev/models/alibaba/qwen3.6-flash/
 }
 
 links() {
