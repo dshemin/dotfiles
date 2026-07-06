@@ -92,6 +92,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]ename symbol" })
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
+vim.keymap.set("n", "<leader>sh", vim.lsp.buf.hover, { desc = "[S]how [H]over under cursor" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -498,7 +499,25 @@ require("lazy").setup({
 				gopls = {},
 				clangd = {},
 				cpplint = {},
-				rust_analyzer = {},
+				rust_analyzer = {
+					assist = {
+						preferSelf = true,
+					},
+					check = {
+						command = "clippy",
+					},
+					joinLines = {
+						removeTrailingComma = false,
+					},
+					hover = {
+						memoryLayout = {
+							enable = true, -- Toggle the size/alignment hover window
+							size = "bytes", -- Can be "bytes" or "bits"
+							alignment = true, -- Show type alignment rules
+							padding = true, -- Show padding bytes inside the struct
+						},
+					},
+				},
 				-- See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
 				lua_ls = {
