@@ -80,6 +80,9 @@ install_cago() {
 	# Remove unused Rust dependencies.
 	# Homepage: https://crates.io/crates/cargo-machete
 	cargo install cargo-machete
+	# For coverage.
+	# Homepage: https://github.com/taiki-e/cargo-llvm-cov
+	cargo install llvm-cov
 }
 
 install_opencoder() {
@@ -119,6 +122,7 @@ link() {
 
 setup_rust() {
 	rustup update
+	rustup component add llvm-tools-preview 
 }
 
 log() {
