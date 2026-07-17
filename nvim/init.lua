@@ -500,6 +500,9 @@ require("lazy").setup({
 				clangd = {},
 				cpplint = {},
 				rust_analyzer = {
+					cargo = {
+						allTargets = true,
+					},
 					assist = {
 						preferSelf = true,
 					},
