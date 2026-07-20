@@ -35,6 +35,7 @@ alias vim="nvim"
 # Git shortcuts.
 alias gs="git status"
 alias ga="git add"
+alias gaa="git add --all"
 alias gc="git commit"
 alias gcm="git commit --amend"
 alias gp="git push"
