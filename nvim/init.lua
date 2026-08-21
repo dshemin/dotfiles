@@ -495,6 +495,7 @@ require("lazy").setup({
 
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+			-- See `:help lspconfig-all` for a list of all the pre-configured LSPs
 			local servers = {
 				gopls = {},
 				clangd = {},
@@ -521,7 +522,6 @@ require("lazy").setup({
 						},
 					},
 				},
-				-- See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
 				lua_ls = {
 					settings = {
@@ -532,6 +532,13 @@ require("lazy").setup({
 						},
 					},
 				},
+
+				ansiblels = {},
+				bashls = {},
+
+				eslint = {},
+				svelte = {},
+				ts_ls = {},
 			}
 
 			local ensure_installed = vim.tbl_keys(servers or {})
