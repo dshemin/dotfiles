@@ -1,0 +1,27 @@
+# Custom Lua snippets.
+# I use Lua only for configuring neovim.
+
+snippet nvim_mod Neovim configuration module
+  local M = {}
+  $1
+  return M
+
+snippet nvim_plugin Neovim plugin file
+  local gh = require('utils.repo').gh
+
+  local M = {}
+
+  function M.setup()
+    vim.pack.add {
+      -- $1
+      {
+        src = '$2',
+        version = '$3'
+      }
+    }
+  end
+
+  require('$4').setup {}
+
+  return M
+
