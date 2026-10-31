@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -18,7 +18,8 @@ main() {
 }
 
 install() {
-	local os=$(uname -o)
+	local os;
+	os=$(uname -o)
 
 	log "Install on $os"
 	case "$os" in
@@ -55,7 +56,7 @@ install_darwin() {
 		"font-fira-code-nerd-font"
 	)
 
-	for x in ${apps[@]}; do
+	for x in "${apps[@]}"; do
 		brew_install "$x"
 	done
 }
@@ -63,17 +64,17 @@ install_darwin() {
 brew_install() {
 	local pkg="$1"
 
-	brew list | grep $pkg > /dev/null && log "$pkg already installed" && return
+	brew list | grep "$pkg" > /dev/null && log "$pkg already installed" && return
 
 	log "Install $pkg"
-	brew install $pkg
+	brew install "$pkg"
 }
 
 has_cmd() {
 	[ -x "$(command -v $1)" ] || false
 }
 
-install_cago() {
+install_cargo() {
 	# TUI for database.
 	# Homepage: https://github.com/achristmascarl/rainfrog
 	cargo install rainfrog
@@ -83,6 +84,10 @@ install_cago() {
 	# For coverage.
 	# Homepage: https://github.com/taiki-e/cargo-llvm-cov
 	cargo install llvm-cov
+	# For listing all crate feature.
+	# Use: cargo whatfeatures <create name>
+	# Homepage: https://github.com/museun/cargo-whatfeatures
+	cargo install cargo-whatfeatures
 }
 
 install_opencoder() {
@@ -95,12 +100,12 @@ install_opencoder() {
 }
 
 links() {
-	link .navi $HOME/.navi
-	link bat $HOME/.config/bat
-	link nvim $HOME/.config/nvim
-	link .tmux.conf $HOME/.tmux.conf
-	link .zshrc $HOME/.zshrc
-	link kitty $HOME/.config/kitty
+	link .navi "$HOME/.navi"
+	link bat "$HOME/.config/bat"
+	link nvim "$HOME/.config/nvim"
+	link .tmux.conf "$HOME/.tmux.conf"
+	link .zshrc "$HOME/.zshrc"
+	link kitty "$HOME/.config/kitty"
 }
 
 link() {
@@ -116,7 +121,7 @@ link() {
 		return
 	fi
 
-	ln -s $from $to
+	ln -s "$from" "$to"
 	log "Create symlink from $from to $to"
 }
 
@@ -126,15 +131,12 @@ setup_rust() {
 }
 
 log() {
-	msg=$1
-	echo "$msg"
+	echo "$1"
 }
 
 fail() {
-	msg=$1
-
-	log $msg
+	log "$1"
 	exit 1
 }
 
-main $@
+main "$@"
