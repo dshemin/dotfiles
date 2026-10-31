@@ -79,6 +79,12 @@ local lsps = {
       ['rust-analyzer'] = {
         cargo = {
           allTargets = true,
+          buildScripts = {
+            enable = true,
+          },
+        },
+        procMacro = {
+          enable = true,
         },
         assist = {
           preferSelf = true,
@@ -92,9 +98,8 @@ local lsps = {
         hover = {
           memoryLayout = {
             enable = true,
-            size = 'bits',
-            alignment = true,
-            padding = true,
+            alignment = 'both',
+            padding = 'both',
           },
         },
       },
