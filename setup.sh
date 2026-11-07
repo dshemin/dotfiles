@@ -54,6 +54,8 @@ install_darwin() {
 		"k9s"
 		"jq"
 		"font-fira-code-nerd-font"
+		"talosctl"
+		"opentofu"
 	)
 
 	for x in "${apps[@]}"; do
